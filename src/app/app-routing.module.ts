@@ -7,10 +7,6 @@ import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   {
-    path: 'home',
-    component: HomeComponent
-  },
-  {
     path: 'cars',
     component: CarsComponent
   },
@@ -22,11 +18,13 @@ const routes: Routes = [
     path: 'car/:id',
     component: CarDetailsComponent
   },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'cars', pathMatch: 'full' },
+  { path: 'home', redirectTo: 'cars', pathMatch: 'full' },
   {
     path: '**',
     redirectTo: ''
   }];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
