@@ -1,0 +1,26 @@
+<div class="card" style="width: 18rem;">
+    <img [src]="car.pictures[0]" class="card-img-top align-self-center" [alt]="car.title">
+    <div class="card-body">
+        <h5 class="card-title">{{car.title}}</h5>
+    </div>
+
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            Marque : <span>{{car.brand}}</span>
+        </li>
+        <li class="list-group-item">
+            Année de construction : <span>{{car.model_year}}</span>
+        </li>
+        <li class="list-group-item">
+            Prix : <span>{{car.price | currency : "EUR" : 'symbol' }} </span>
+        </li>
+        <li class="list-group-item">
+            <span>{{car.numbers_doors}} portes</span>
+        </li>
+        <li class="list-group-item">
+            Moteur : <span>{{car.fuel}}</span>
+        </li>
+    </ul>
+    <!-- <button (click)="choisir()" class="btn btn-primary">Choisir ce pokémon</button> -->
+
+</div>
