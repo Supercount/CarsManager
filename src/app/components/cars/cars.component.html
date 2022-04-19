@@ -1,6 +1,13 @@
 <div class="container">
-
+    <div>
+        Trier la liste par : 
+        <select [(ngModel)]="type">
+            <option value="">-------</option>
+            <option value="date">Date</option>
+            <option value="prix">Prix</option>
+        </select>
+    </div>
     <div class="row">
-        <app-car [car]="car" class="col-md-4 mt-3" *ngFor="let car of carList"></app-car>
+        <app-car [car]="car" class="col-md-4 mt-3" *ngFor="let car of carList | tri : type : ordre"></app-car>
     </div>
 </div>

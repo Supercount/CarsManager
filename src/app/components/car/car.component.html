@@ -12,7 +12,7 @@
             Année de construction : <span>{{car.model_year}}</span>
         </li>
         <li class="list-group-item">
-            Prix : <span>{{car.price | currency : "EUR" : 'symbol' }} </span>
+            Prix : <span  *ngIf="car.price;else na">{{car.price | currency : "EUR" : 'symbol' }} </span>
         </li>
         <li class="list-group-item">
             <span>{{car.numbers_doors}} portes</span>
@@ -25,5 +25,6 @@
         </li>
     </ul>
     
+    <ng-template #na>N/A</ng-template>
 
 </div>

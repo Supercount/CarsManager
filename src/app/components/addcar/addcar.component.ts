@@ -74,6 +74,4 @@ export class AddcarComponent implements OnInit {
       this.router.navigate(['/cars']);
   }
 
-  
-
 }

@@ -13,6 +13,7 @@ import { CarDetailsComponent } from './components/car-details/car-details.compon
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { registerLocaleData } from '@angular/common';
+import { TriPipe } from './pipes/tri.pipe';
 
 registerLocaleData(localeFR);
 
@@ -24,7 +25,8 @@ registerLocaleData(localeFR);
     HomeComponent,
     AddcarComponent,
     CarComponent,
-    CarDetailsComponent
+    CarDetailsComponent,
+    TriPipe
   ],
   imports: [
     BrowserModule,

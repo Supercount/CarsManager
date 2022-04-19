@@ -62,6 +62,13 @@
         <label for="pic1" class="form-label">Autre photo de la voiture : </label>
         <input type="text" id="pic1" [(ngModel)]="car.pictures[1]"/>
     </div>
+    <div class="mb-3">
+        <label for="sold" class="form-label">Etat : </label>
+        <input class="form-check-input" type="radio" id="inlineRadio1" [(ngModel)]="car.sold" [value]="false"/>
+        <label class="form-check-label" for="inlineRadio1">A Vendre</label>
+        <input class="form-check-input" type="radio" id="inlineRadio2" [(ngModel)]="car.sold" [value]="true"/>
+        <label class="form-check-label" for="inlineRadio1">Vendue</label>
+    </div>
     <button class="btn btn-success" (click)="ajouter()">Ajouter</button>
     <a class="btn btn-primary" [routerLink]="'/cars'">Annuler</a>
 </div>
