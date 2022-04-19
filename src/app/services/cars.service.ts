@@ -17,7 +17,16 @@ export class CarsService {
     return this.httpClient.get<Car[]>(`${this.BASE_URL}`);
   }
   
+  getCar(id : number): Observable<Car> {
+    return this.httpClient.get<Car>(`${this.BASE_URL}/${id}`);
+  }
+  
   create(data: any): Observable<any> {
     return this.httpClient.post(`${this.BASE_URL}`, data);
   }
+
+  delete(id: number): void {
+    this.httpClient.delete(`${this.BASE_URL}/${id}`).subscribe();
+  }
+
 }

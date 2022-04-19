@@ -1,1 +1,51 @@
-<p>car-details works!</p>
+
+<h1>Détails de la voiture {{car.title}}</h1>
+
+<div *ngIf="car.sold == true">
+    <h2 class="important">Voiture déjà vendue</h2>
+</div>
+
+Visuels : 
+<div class="row">
+    <div *ngFor="let link of car.pictures" class="col-5">
+        <img [src]="link" [alt]="car.title">
+    </div>
+</div>
+<ul class="list-group list-group-flush">
+    <li class="list-group-item">
+        Lieu de vente : <span>{{car.address}}</span>
+    </li>
+    <li class="list-group-item">
+        Marque : <span>{{car.brand}}</span>
+    </li>
+    <li class="list-group-item" *ngIf="car.model != 'Other'">
+        Model : <span>{{car.model}}</span>
+    </li>
+    <li class="list-group-item">
+        Année de construction : <span>{{car.model_year}}</span>
+    </li>
+    <li class="list-group-item">
+        Prix : <span>{{car.price | currency : "EUR" : 'symbol' }} </span>
+    </li>
+    <li class="list-group-item">
+        <span>{{car.numbers_doors}} portes</span>
+    </li>
+    <li class="list-group-item">
+        Moteur : <span>{{car.fuel}}</span>
+    </li>
+    <li class="list-group-item">
+        Date de l'annonce : <span>{{car.issuance | date : 'shortDate'}}</span>
+    </li>
+    <li class="list-group-item">
+        Kilométrage : <span>{{car.mileage}}</span>
+    </li>
+    <li class="list-group-item">
+        Couleur : <span>{{car.color}}</span>
+    </li>
+    <li class="list-group-item">
+        Puissance : <span>{{car.horse_power}} chevaux</span>
+    </li>
+</ul>
+
+<button class="btn btn-danger" (click)="delete()">Supprimer l'annonce</button>
+<a class="btn btn-primary" [routerLink]="'/cars'">Retour</a>

@@ -5,7 +5,7 @@ export interface Car {
     brand: String,
     model: String,
     model_year: number,
-    issuance: Date,
+    issuance: number,
     mileage: number,
     fuel: String,
     color: String,

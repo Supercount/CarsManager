@@ -20,7 +20,10 @@
         <li class="list-group-item">
             Moteur : <span>{{car.fuel}}</span>
         </li>
+        <li class="list-group-item">
+            <a [routerLink]="['/car', car.id]">Afficher les détails</a>
+        </li>
     </ul>
-    <!-- <button (click)="choisir()" class="btn btn-primary">Choisir ce pokémon</button> -->
+    
 
 </div>

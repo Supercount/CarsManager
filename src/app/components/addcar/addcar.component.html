@@ -1,1 +1,67 @@
-<p>addcar works!</p>
+
+<div class="container-fluid">
+
+    <h1>Formulaire de dépose d'annoce</h1>
+    
+    <div class="mb-3">
+        <label for="title" class="form-label">Titre de l'annonce : </label>
+        <input type="text" id="title" [(ngModel)]="car.title"/>
+    </div>
+    <div class="mb-3">
+        <label for="address" class="form-label">Ville de vente : </label>
+        <input type="text" id="address" [(ngModel)]="car.address"/>
+    </div>
+    <div class="mb-3">
+        <label for="brand" class="form-label">Marque de la voiture : </label>
+        <input type="text" id="brand" [(ngModel)]="car.brand"/>
+    </div>
+    <div class="mb-3">
+        <label for="model" class="form-label">Model de la voiture : </label>
+        <input type="text" id="model" [(ngModel)]="car.model"/>
+    </div>
+    <div class="mb-3">
+        <label for="model_year" class="form-label">Année de construction : </label>
+        <input type="text" id="model_year" [(ngModel)]="car.model_year"/>
+    </div>
+    <div class="mb-3">
+        <label for="mileage" class="form-label">Kilométrage : </label>
+        <input type="text" id="mileage" [(ngModel)]="car.mileage"/>
+    </div>
+    <div class="mb-3">
+        <label for="fuel" class="form-label">Carburant : </label>
+        <select  id="fuel" [(ngModel)]="car.fuel">
+            <option value="electric">Electrique</option>
+            <option value="petrol">Pétrole</option>
+            <option value="diesel">Diesel</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="color" class="form-label">Couleur de la voiture : </label>
+        <input type="text" id="color" [(ngModel)]="car.color"/>
+    </div>
+    <div class="mb-3">
+        <label for="numbers_doors" class="form-label">Nombre de portes : </label>
+        <input type="number" id="numbers_doors" [(ngModel)]="car.numbers_doors"/>
+    </div>
+    <div class="mb-3">
+        <label for="horse_power" class="form-label">Puissance fiscale : </label>
+        <input type="text" id="horse_power" [(ngModel)]="car.horse_power"/>
+    </div>
+    <div class="mb-3">
+        <label for="price" class="form-label">Prix : </label>
+        <input type="number" id="price" [(ngModel)]="car.price"/>
+    </div>
+    <div class="mb-3">
+        <label for="pic1" class="form-label">Photo de la voiture : </label>
+        <input type="text" id="pic1" [(ngModel)]="car.pictures[0]"/>
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-secondary" (click)="newImage()">Ajouter une autre photo</button>
+    </div>
+    <div class="mb-3" *ngIf="img == true">
+        <label for="pic1" class="form-label">Autre photo de la voiture : </label>
+        <input type="text" id="pic1" [(ngModel)]="car.pictures[1]"/>
+    </div>
+    <button class="btn btn-success" (click)="ajouter()">Ajouter</button>
+    <a class="btn btn-primary" [routerLink]="'/cars'">Annuler</a>
+</div>
